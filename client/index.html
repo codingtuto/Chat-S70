@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="./assets/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Chat S70</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  
+  <!-- Splashscreen script by @A_liou -->
+  <style>
+.max-span{color: white}
+.max-splash-wrap{position:fixed;height:100%;width:100%;top:0;left:0;right:0;bottom:0;background:#4c4c6e;z-index:9999999}
+.max-splash-wrap .max-splash-screen{position:relative;top:50%;left:50%;display:flex;background:transparent;flex-direction:column;align-items:center;width:100%;transform: translate(-50% , -50%) scale(0.97);opacity:0}
+.max-splash-wrap .max-splash-screen img{width:150px;height:150px}
+.max-splash-wrap .max-splash-screen span{text-align:center;font-size:15px;font-weight:600;margin:20px;font-family:Noto Sans', sans-serif}
+</style>
+<div class='max-splash-wrap'>
+<div class='max-splash-screen'>
+<img alt="Max" src="./assets/bot.svg"/>
+<span class="max-span">Chat S70</span>
+</div>  
+</div>
+
+<script>
+//<![CDATA[
+var splashSession = sessionStorage.getItem('splashSession');
+document.addEventListener('DOMContentLoaded',function(){
+if (splashSession === null) {
+document.querySelector('.max-splash-screen').style.opacity ='1';
+splashSession = sessionStorage.setItem('splashSession',true);
+setTimeout(function(){
+document.querySelector('.max-splash-wrap').style.display ='none';
+}, 5000);
+} else{
+document.querySelector('.max-splash-wrap').style.display ='none';
+}});
+//]]> 
+</script>
+  <body>
+    <div id="app">
+      <h1>Chat S70 <img height="34px" src="./assets/bot.svg" /></h1>
+      <div id="chat_container"></div>
+      <form>
+        <textarea
+          name="prompt"
+          rows="1"
+          cols="1"
+          placeholder="Demander à chat S70..."
+        ></textarea>
+        <button type="submit">
+          <img src="assets/send.svg" alt="send btn" />
+        </button>
+      </form>
+    </div>
+
+    <script type="module" src="script.js"></script>
+  </body>
+</html>
