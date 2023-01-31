@@ -85,7 +85,7 @@ const messageDiv = document.getElementById(uniqueId);
 loader(messageDiv);
 
 
-const response = await fetch("https://chatgpt-app-clone-manoj-kumar.onrender.com", {
+const response = await fetch("https://chatbot-sijj.onrender.com/", {
   method:"POST",
   headers:{
     "Content-Type":"application/json",
